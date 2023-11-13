@@ -43,13 +43,13 @@ const modes = [
   'camera',
   'draw',
 ]
-let mode = modes[0];
+let mode = modes[1];
 let grid_size_ref = 20;
 
 /* PARAMETROS ASCII */
 let canvas;
 let symbols;
-let chars_index = 2;
+let chars_index = 0;
 let proportion;
 let grid_columns, grid_rows;
 let cell_size;
@@ -76,8 +76,8 @@ function setup() {
 	textAlign(CENTER, CENTER);
   textSize(cell_size * 0.8);
 
-	// camera = createCapture(VIDEO);
-	// camera.size(camWidth, camHeight);
+	camera = createCapture(VIDEO);
+	camera.size(camWidth, camHeight);
 	// camera.hide();
 
   symbols = [];
@@ -118,17 +118,23 @@ function draw() {
         let n = noise(x*0.07,y*0.07, frameCount*0.007);
         let c = map(n, 0, 0.7, 0, 255);
         buffer.stroke(c);
+
+        if ((x+y*grid_columns)%2 == 0) {
+          buffer.stroke(255, 0, 0);
+        } else {
+          buffer.stroke(0, 100, 0);
+        }
         buffer.point(x,y);
       }
     }
   }
 
   if( mode == 'camera') {
-    buffer.image(camera, grid_columns, grid_rows);
+    buffer.image(camera, 0, 0, grid_columns, grid_rows);
   }
 
  	imageToAscii(buffer);
-  // image(buffer, width/2, height/2)
+  image(buffer, width/2, height/2, buffer.width * 10, buffer.height * 10)
 }
 
 function windowResized() {
@@ -145,10 +151,9 @@ function init() {
 
 function imageToAscii(c) {
   c.loadPixels();
-	background(0);
-	for (let j = 0; j < c.height; j++) {
-		for (let i = 0; i < c.width; i++) {
-			const pixelIndex = ((j * c.width) + i) * 4;
+	for (let j = 0; j < grid_rows; j++) {
+		for (let i = 0; i < grid_columns; i++) {
+			const pixelIndex = (i + j * grid_columns) * 4;
 			const r = c.pixels[pixelIndex];
 			const g = c.pixels[pixelIndex + 1];
 			const b = c.pixels[pixelIndex + 2];
@@ -159,13 +164,15 @@ function imageToAscii(c) {
       let x = i * cell_size;
       let y = j * cell_size;
       fill(paleta[cor]);
+      fill(cinza * 255);
+      
       strokeWeight(2);
       stroke(paleta[cor]);
       rect(x, y, cell_size, cell_size)
 
       fill(0);
       noStroke();
-			text(glifo, x + cell_size * 0.5, y + cell_size * 0.5);
+			// text(glifo, x + cell_size * 0.5, y + cell_size * 0.5);
 		}
 	}
 }
