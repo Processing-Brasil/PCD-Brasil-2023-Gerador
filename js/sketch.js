@@ -109,7 +109,6 @@ function setup() {
   btn_save = createButton('Salvar Imagem');
   btn_save.parent("interface");
   btn_save.mousePressed(save_image);
-
 }
 
 function draw() {
