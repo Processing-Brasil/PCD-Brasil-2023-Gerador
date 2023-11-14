@@ -44,7 +44,7 @@ const modes = [
   'draw',
 ]
 let mode = modes[1];
-let grid_size_ref = 20;
+let grid_size_ref = 10;
 
 /* PARAMETROS ASCII */
 let canvas;
