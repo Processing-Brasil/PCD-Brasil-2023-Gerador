@@ -28,14 +28,18 @@ const chars = [
 
 const emojis = [
   ['📘','📘','📕','📕','📗','📗'],
-  ['🖤','🤎','💜','💙','💚','🧡','💛','❤','🤍'],
-  ['😭','🙁','😔','😑','😐','🙂','😊','😄','😁'],
-  ['🐵','🐶','🐺','🦊','🦝','🐱','🦁','🐯','🐴','🦄','🦓','🐮','🐷','🐗','🦒','🐭','🐹','🐰','🐻','🐨','🐼','🐔','🐸','🐠','🐌','🦋','🐛','🐜','🐝'],
+  ['🖤','🤎','💜','💙','💚','🧡'],
+  ['😭','🙁','😑','🙂','😊','😄','😁'],
+  ['🐵','🐶','🐺','🦊','🦝','🐱','🦁'],
+  ['🐯','🐴','🦄','🦓','🐮','🐷','🐗'],
+  ['🦒','🐭','🐹','🐰','🐻','🐨','🐼'],
+  ['🐔','🐸','🐠','🐌','🦋','🐛','🐜','🐝'],
   ['🌹','🌹','🌻','🌼','🌷','🌷'],
   ['⛈','🌤','🌥','🌦','🌧','🌨','🌩'],
-  ['🍇','🍉','🍊','🍋','🍌','🍍','🥭','🍎','🍐','🍑','🍒','🍓'],
+  ['🍇','🍉','🍊','🍋','🍌','🍐','🍍','🥭','🍎','🍑','🍒','🍓'],
   ['⚽','⚾','🥎','🏀','🏐','🏈','🏉','🎱'],
-  ['📞','📟','📠','🔋','🔌','💻','💽','💾','💿','📀','🧮','🎥','📺','📸','📹','📼'],
+  ['💽','💾','💿','📀'],
+  ['📞','📟','📠','🔋','🔌','💻','🧮','🎥','📺','📸','📹','📼'],
 ]
 
 const modes = [
@@ -43,7 +47,7 @@ const modes = [
   'camera',
   'draw',
 ]
-let mode = modes[1];
+let mode = modes[0];
 let grid_size_ref = 10;
 
 /* PARAMETROS ASCII */
@@ -70,6 +74,7 @@ let btn_save;
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
 	canvas.parent("p5js-container");
+  pixelDensity(1);
 
   init();
 
@@ -78,7 +83,7 @@ function setup() {
 
 	camera = createCapture(VIDEO);
 	camera.size(camWidth, camHeight);
-	// camera.hide();
+	camera.hide();
 
   symbols = [];
   chars.forEach(c => {
@@ -91,6 +96,8 @@ function setup() {
   symbols = shuffle(symbols);
 
   radio_symbols = createRadio();
+  radio_symbols.parent("interface");
+  radio_symbols.elt.classList.add("radios");
   radio_symbols.option('?','?');
   radio_symbols.selected('?');
 
@@ -100,6 +107,7 @@ function setup() {
   }
   
   btn_save = createButton('Salvar Imagem');
+  btn_save.parent("interface");
   btn_save.mousePressed(save_image);
 
 }
@@ -118,12 +126,6 @@ function draw() {
         let n = noise(x*0.07,y*0.07, frameCount*0.007);
         let c = map(n, 0, 0.7, 0, 255);
         buffer.stroke(c);
-
-        if ((x+y*grid_columns)%2 == 0) {
-          buffer.stroke(255, 0, 0);
-        } else {
-          buffer.stroke(0, 100, 0);
-        }
         buffer.point(x,y);
       }
     }
@@ -134,7 +136,7 @@ function draw() {
   }
 
  	imageToAscii(buffer);
-  image(buffer, width/2, height/2, buffer.width * 10, buffer.height * 10)
+  // image(buffer, width/2, height/2, buffer.width * 10, buffer.height * 10)
 }
 
 function windowResized() {
@@ -163,16 +165,14 @@ function imageToAscii(c) {
       let cor = floor(cinza * (paleta.length-1));
       let x = i * cell_size;
       let y = j * cell_size;
-      fill(paleta[cor]);
-      fill(cinza * 255);
-      
+      fill(paleta[cor]);      
       strokeWeight(2);
       stroke(paleta[cor]);
       rect(x, y, cell_size, cell_size)
 
       fill(0);
       noStroke();
-			// text(glifo, x + cell_size * 0.5, y + cell_size * 0.5);
+			text(glifo, x + cell_size * 0.5, y + cell_size * 0.5);
 		}
 	}
 }
