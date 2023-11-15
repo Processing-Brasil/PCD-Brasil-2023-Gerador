@@ -48,7 +48,13 @@ const modes = [
   'draw',
 ]
 let mode = modes[0];
-let grid_size_ref = 10;
+let grid_size_ref = 16;
+let frames = 600;
+let formato = {
+  width: 1080,
+  height: 1920,
+}
+let t;
 
 /* PARAMETROS ASCII */
 let canvas;
@@ -71,8 +77,15 @@ let radio_symbols;
 let btn_camera;
 let btn_save;
 
+P5Capture.setDefaultOptions({
+  format: "png",
+  framerate: 30,
+  duration: frames,
+});
+
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
+  // canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(formato.width, formato.height);
 	canvas.parent("p5js-container");
   pixelDensity(1);
 
@@ -81,9 +94,9 @@ function setup() {
 	textAlign(CENTER, CENTER);
   textSize(cell_size * 0.8);
 
-	camera = createCapture(VIDEO);
-	camera.size(camWidth, camHeight);
-	camera.hide();
+	// camera = createCapture(VIDEO);
+	// camera.size(camWidth, camHeight);
+	// camera.hide();
 
   symbols = [];
   chars.forEach(c => {
@@ -113,6 +126,8 @@ function setup() {
 
 function draw() {
 
+  t = map(frameCount-1, 0, frames, 0, 1);
+
   if (radio_symbols.value() == '?') {
     chars_index = floor((frameCount * 0.01) % symbols.length);
   } else {
@@ -120,9 +135,14 @@ function draw() {
   }
 
   if( mode == 'noise') {
+
     for(let x = 0; x < grid_columns; x++) {
       for(let y = 0; y < grid_rows; y++) {
-        let n = noise(x*0.07,y*0.07, frameCount*0.007);
+
+        let xoff = cos(TWO_PI * t);
+        let yoff = cos(TWO_PI * t);
+
+        let n = noise(x*0.07 + xoff ,y*0.07 + yoff);
         let c = map(n, 0, 0.7, 0, 255);
         buffer.stroke(c);
         buffer.point(x,y);
@@ -139,14 +159,14 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  // resizeCanvas(windowWidth, windowHeight);
 }
 
 function init() {
-  proportion = windowWidth / windowHeight;
+  proportion = formato.width / formato.height;
   grid_columns = floor(proportion * grid_size_ref);
-  cell_size = windowWidth/grid_columns;
-  grid_rows = ceil(windowHeight / cell_size);
+  cell_size = formato.width / grid_columns;
+  grid_rows = ceil(formato.height / cell_size);
   buffer = createGraphics(grid_columns, grid_rows);
 }
 
