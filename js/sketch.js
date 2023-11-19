@@ -6,56 +6,73 @@ https://www.openprocessing.org/sketch/818943
 
 /* PARAMETROS DE ENTRADA */
 
-const paleta = [
-  '#000000',
-  '#4e57fa',
-  '#fd5554',
-  '#52fe54',
-  '#fbfc01',
-  '#57fdfd',
-]
+let opcoes = {
+  paleta: [
+    '#000000',
+    '#4e57fa',
+    '#fd5554',
+    '#52fe54',
+    '#fbfc01',
+    '#57fdfd',
+  ],
+  chars: [  
+    '●●●●●○○○○○',
+    '#%$^&*()_+!',
+    '↑↗→↘↓↙←↖',
+    '█▓▒░ ',
+    '█▊▋▌▍▎▏ ',
+    '▖▗▘▙▚▛▜▝▞▟',
+    '♠♥♦♣',
+    'Ñ@#W$9876543210?!abc;:+=-,._ '
+  ],
+  emojis: [
+    ['🖤','🤎','💜','💙','💚','🧡'],
+    ['🙁','😑','🙂','😊','😄','😁'],
+    ['🐵','🐶','🐺','🦊','🦝','🐱'],
+    ['🐯','🐴','🦓','🐮','🐷','🐗'],
+    ['🦒','🐭','🐰','🐻','🐨','🐼'],
+    ['🐔','🐸','🐠','🐌','🦋','🐛','🐜','🐝'],
+    ['🌹','🌹','🌻','🌼','🌷','🌷'],
+    ['⛈','🌤','🌥','🌦','🌧','🌨','🌩'],
+    ['🍇','🍉','🍊','🍋','🍌','🍐'],
+    ['🍍','🥭','🍎','🍑','🍒','🍓'],
+    ['⚽','⚾','🥎','🏀','🏐','🏈','🏉','🎱'],
+    ['💽','💾','💿','📀'],
+    ['📞','📟','📠','🔋','🔌','💻','🧮'],
+    ['🎥','📺','📸','📹','📼'],
+    ['📅','2','12','📅','2','12']
+  ],
+  modo: 0,
+  grid_size_ref: 18, //16,
+  frames: 450,
+  formato: {
+    width: 1080,
+    height: 1920,
+  }
+}
 
-const chars = [  
-  '●●●●●○○○○○',
-  '#%$^&*()_+!',
-  '↑↗→↘↓↙←↖',
-  '█▓▒░ ',
-  '█▊▋▌▍▎▏ ',
-  '▖▗▘▙▚▛▜▝▞▟',
-  '♠♥♦♣',
-  'Ñ@#W$9876543210?!abc;:+=-,._ '
-];
+/* SETUP */
 
-const emojis = [
-  ['🖤','🤎','💜','💙','💚','🧡'],
-  ['🙁','😑','🙂','😊','😄','😁'],
-  ['🐵','🐶','🐺','🦊','🦝','🐱'],
-  ['🐯','🐴','🦓','🐮','🐷','🐗'],
-  ['🦒','🐭','🐰','🐻','🐨','🐼'],
-  ['🐔','🐸','🐠','🐌','🦋','🐛','🐜','🐝'],
-  ['🌹','🌹','🌻','🌼','🌷','🌷'],
-  ['⛈','🌤','🌥','🌦','🌧','🌨','🌩'],
-  ['🍇','🍉','🍊','🍋','🍌','🍐'],
-  ['🍍','🥭','🍎','🍑','🍒','🍓'],
-  ['⚽','⚾','🥎','🏀','🏐','🏈','🏉','🎱'],
-  ['💽','💾','💿','📀'],
-  ['📞','📟','📠','🔋','🔌','💻','🧮'],
-  ['🎥','📺','📸','📹','📼'],
-]
+const paleta = opcoes.paleta;
+const chars = opcoes.chars;
+const emojis = opcoes.emojis;
 
 const modes = [
   'noise',
   'camera',
   'draw',
 ]
-let mode = modes[0];
-let grid_size_ref = 16;
-let frames = 450;
+let mode = modes[opcoes.modo];
+let grid_size_ref = opcoes.grid_size_ref;
+let frames = opcoes.frames;
 let formato = {
-  width: 1080,
-  height: 1920,
+  width: opcoes.formato.width,
+  height: opcoes.formato.height,
 }
 let t;
+let contador = 0;
+let playing = false;
+let semente = 0;
 
 /* PARAMETROS ASCII */
 let canvas;
@@ -77,11 +94,13 @@ const camHeight = 240;
 let radio_symbols;
 let btn_camera;
 let btn_save;
+let btn_play_pause;
 
 P5Capture.setDefaultOptions({
-  format: "png",
+  format: "jpg",
   framerate: 30,
   duration: frames,
+  disableUi: true,
 });
 
 function setup() {
@@ -123,14 +142,19 @@ function setup() {
   btn_save = createButton('Salvar Imagem');
   btn_save.parent("interface");
   btn_save.mousePressed(save_image);
+
+  btn_play_pause = createButton('Play & Pause');
+  btn_play_pause.parent("interface");
+  btn_play_pause.mousePressed(play_pause);
+
 }
 
 function draw() {
 
-  t = map(frameCount-1, 0, frames, 0, 1);
+  t = map(contador-1, 0, frames, 0, 1);
 
   if (radio_symbols.value() == '?') {
-    chars_index = floor((frameCount * 0.01) % symbols.length);
+    chars_index = floor((contador * 0.01) % symbols.length);
   } else {
     chars_index = parseInt(radio_symbols.value());
   }
@@ -157,6 +181,9 @@ function draw() {
 
  	imageToAscii(buffer);
   // image(buffer, width/2, height/2, buffer.width * 10, buffer.height * 10)
+  if( playing ) {
+    contador++;
+  } 
 }
 
 function windowResized() {
@@ -200,4 +227,8 @@ function imageToAscii(c) {
 function save_image() {
   timestamp = (+new Date).toString(36);
   save(canvas, timestamp + 'png');
+}
+
+function play_pause() {
+  playing =! playing;
 }

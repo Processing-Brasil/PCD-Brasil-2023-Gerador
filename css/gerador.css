@@ -1,0 +1,65 @@
+main {
+  display: flex;
+}
+
+#interface {
+  font-size: 1.8rem;
+  padding: 1rem;
+  width: 300px;
+  flex-grow: 1;
+}
+
+#interface button {
+  font-size: 2rem;
+}
+
+#interface .radios {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#interface .radios label {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  width: 5rem;
+}
+
+#interface .radios label input {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+#p5js-container {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+}
+
+
+#infos {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#infos .texto {
+  height: 420px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  --base-font-size: 4.2rem;
+  --base-color-lineheight: calc(var(--base-font-size) * 1.25);
+}
+
+#infos .texto.inferior {
+  text-align: right;
+}
+
+#infos .texto span {
+  text-transform: none !important;
+}
+

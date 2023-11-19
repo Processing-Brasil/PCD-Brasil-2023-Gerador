@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/gerador.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js" integrity="sha512-pgK6Wo8doipc/IPQ0ilH3b47ww01345nR9ud1/6Qp0n+lQlEW9zuw6JhysRcUpBY4yKuVZjn1MAkDxbnncuGsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5.capture@1.4.1/dist/p5.capture.umd.min.js"></script>
+
+  <script defer src="../js/sketch.js"></script>
+  <script defer src="../js/main.js"></script>
+  <script src="../js/dom-to-image.js"></script>
+
+</head>
+<body>
+  <main>
+    <div id="interface"></div>
+    <div id="p5js-container">
+      <div id="infos">
+        <div class="texto superior">
+          <h4 class="programacao-item-titulo colorido"><span class="programacao-item-tipo" style="background-color: rgb(82, 254, 84);">Palestra</span><span style="background-color: rgb(78, 87, 250);">AI Art e Direitos Autorais: Debates Críticos e um Chamado à Ação da Comunidade de Arte Generativa </span><span class="programacao-item-pessoa" style="background-color: rgb(87, 253, 253);">Marcelo de Oliveira Rosa Prates</span></h4>
+        </div>
+        <div class="imagem">
+          <img src="images/AlexandreVillares.jpg" alt="">
+        </div>
+        <div class="texto inferior">
+          <div class="colorido">
+           <span>Processing Community Day</span><br><!--
+            --><span class="separador">*</span><!--
+            --><span>Brasil</span><!--
+            --><span class="separador">*</span><!--
+            --><span>2023</span><!--
+            --><span class="separador">*</span>
+          </div>
+          <div class="colorido">
+            <span class="separador">*</span><!--
+            --><span>2 de Dezembro</span><!--
+            --><span class="separador">*</span>
+          </div>
+          <div class="colorido">
+            <span>Mais informações:</span>
+          </div>
+          <div class="colorido">
+            <span>pcd2023.encontrosgitais.com.br</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="btn">oi</button>
+    <div id="captura"></div> 
+  </main>
+
+  <script>
+    
+    // document.getElementById('btn').addEventListener('click', function() {
+
+    // //   domtoimage.toBlob(document.getElementById('p5js-container'))
+    // // .then(function (blob) {
+    // //     window.saveAs(blob, 'my-node.png');
+    // // });
+
+    //   var teste = document.getElementById('p5js-container');
+
+    //   domtoimage.toPng(teste)
+    //     .then(function(dataUrl) {
+    //     console.log(dataUrl);
+    //       //window.open(dataUrl);
+    //       var img = new Image();
+    //       img.src = dataUrl;
+    //       document.getElementById("captura").appendChild(img);
+    //     })
+    //     .catch(function(error) {
+    //       console.error('oops, something went wrong!', error);
+    //     });
+
+    // });
+
+  </script>
+  
+</body>
+</html>
