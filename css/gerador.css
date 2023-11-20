@@ -1,5 +1,4 @@
 main {
-  display: flex;
 }
 
 #interface {
@@ -33,33 +32,9 @@ main {
 
 #p5js-container {
   position: relative;
-  width: 1080px;
-  height: 1920px;
+  /* width: 1080px;
+  height: 1920px; */
+
+  width: 1280px;
+  height: 720px;
 }
-
-
-#infos {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#infos .texto {
-  height: 420px;
-  display: block;
-  position: relative;
-  z-index: 1;
-  --base-font-size: 4.2rem;
-  --base-color-lineheight: calc(var(--base-font-size) * 1.25);
-}
-
-#infos .texto.inferior {
-  text-align: right;
-}
-
-#infos .texto span {
-  text-transform: none !important;
-}
-

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/diagramador.css">
+
+  <script defer src="../js/main.js"></script>
+  <script src="../js/dom-to-image.js"></script>
+
+</head>
+<body>
+  <main>
+
+    <style>
+      .programacao {
+        display: none;
+      }
+
+      .programacao .texto {
+        height: 420px;
+        display: block;
+        position: relative;
+        z-index: 1;
+        --base-font-size: 4.2rem;
+        --base-color-lineheight: calc(var(--base-font-size) * 1.25);
+        background-color: #f0f;
+      }
+
+      .programacao .texto.inferior {
+        text-align: right;
+      }
+
+    </style>
+
+    <section class="artboard programacao">
+        <div class="texto superior">
+          <h4 class="programacao-item-titulo colorido"><span class="programacao-item-tipo" style="background-color: rgb(82, 254, 84);">Palestra</span><span style="background-color: rgb(78, 87, 250);">AI Art e Direitos Autorais: Debates Críticos e um Chamado à Ação da Comunidade de Arte Generativa </span><span class="programacao-item-pessoa" style="background-color: rgb(87, 253, 253);">Marcelo de Oliveira Rosa Prates</span></h4>
+        </div>
+        <div class="imagem">
+          <img src="images/AlexandreVillares.jpg" alt="">
+        </div>
+        <div class="texto inferior">
+          <div class="colorido">
+           <span>Processing Community Day</span><br><!--
+            --><span class="separador">*</span><!--
+            --><span>Brasil</span><!--
+            --><span class="separador">*</span><!--
+            --><span>2023</span><!--
+            --><span class="separador">*</span>
+          </div>
+          <div class="colorido">
+            <span class="separador">*</span><!--
+            --><span>2 de Dezembro</span><!--
+            --><span class="separador">*</span>
+          </div>
+          <div class="colorido">
+            <span>Mais informações:</span>
+          </div>
+          <div class="colorido">
+            <span>pcd2023.encontrosgitais.com.br</span>
+          </div>
+        </div>
+    </section>
+
+    <style>
+      .streamyard {
+        width: 1280px;
+        height: 720px;
+        background-color: #f0f;
+        /* display: flex; */
+        display: none;
+        justify-content:center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .streamyard .texto {
+        display: block;
+        position: relative;
+        z-index: 1;
+        --base-font-size: 4.2rem;
+        --base-color-lineheight: calc(var(--base-font-size) * 1.25);
+      }
+
+      .streamyard .texto.inferior {
+        text-align: right;
+      }
+    </style>
+
+    <section class="artboard streamyard">
+      <div class="texto superior" style="width: 100%;">
+        <div class="colorido" style='text-align: left;'>
+         <span style="text-transform: uppercase">Processing Community Day</span><br><!--
+          --><span class="separador">*</span><!--
+          --><span style="text-transform: uppercase">Brasil</span><!--
+          --><span class="separador">*</span><!--
+          --><span>2023</span><!--
+          --><span class="separador">*</span>
+        </div>
+      </div>
+      <div class="texto inferior" style="width: 100%;">
+        <div class="colorido">
+          <span class="separador">*</span><!--
+          --><span>2 de Dezembro</span><!--
+          --><span class="separador">*</span>
+        </div>
+        <div class="colorido">
+          <span>mais informações:</span>
+        </div>
+        <div class="colorido">
+          <span>pcd2023.encontrosgitais.com.br</span>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .streamyard-ov-01 {
+        width: 1280px;
+        height: 720px;
+        background-color: #f0f;
+        display: flex;
+        /* display: none; */
+        justify-content:space-between;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .streamyard-ov-01 .texto {
+        display: block;
+        position: relative;
+        z-index: 1;
+        --base-font-size: 1.2rem;
+        --base-color-lineheight: calc(var(--base-font-size) * 1.55);
+      }
+
+      .streamyard-ov-01 .texto.inferior {
+        text-align: right;
+        height: var(--base-color-lineheight);
+      }
+    </style>
+
+    <section class="artboard streamyard-ov-01">
+      <div class="texto superior" style="width: 100%;">
+        <div class="colorido" style='text-align: left;'>
+          <span class="separador">*</span><span style="text-transform: uppercase">Processing Community Day</span><!--
+          --><span class="separador">*</span><!--
+          --><span style="text-transform: uppercase">Brasil</span><!--
+          --><span class="separador">*</span><!--
+          --><span>2023</span><!--
+          --><span class="separador">*</span>
+        </div>
+      </div>
+      <div class="texto inferior" style="width: 100%;">
+        <div class="colorido">
+          <span class="separador">*</span><span>pcd2023.encontrosgitais.com.br</span><span class="separador">*</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    
+    // document.getElementById('btn').addEventListener('click', function() {
+
+    // //   domtoimage.toBlob(document.getElementById('p5js-container'))
+    // // .then(function (blob) {
+    // //     window.saveAs(blob, 'my-node.png');
+    // // });
+
+    //   var teste = document.getElementById('p5js-container');
+
+    //   domtoimage.toPng(teste)
+    //     .then(function(dataUrl) {
+    //     console.log(dataUrl);
+    //       //window.open(dataUrl);
+    //       var img = new Image();
+    //       img.src = dataUrl;
+    //       document.getElementById("captura").appendChild(img);
+    //     })
+    //     .catch(function(error) {
+    //       console.error('oops, something went wrong!', error);
+    //     });
+
+    // });
+
+  </script>
+  
+</body>
+</html>

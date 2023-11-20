@@ -31,24 +31,26 @@ let opcoes = {
     ['🐵','🐶','🐺','🦊','🦝','🐱'],
     ['🐯','🐴','🦓','🐮','🐷','🐗'],
     ['🦒','🐭','🐰','🐻','🐨','🐼'],
-    ['🐔','🐸','🐠','🐌','🦋','🐛','🐜','🐝'],
+    ['🐔','🐸','🐠','🐌','🐜','🐝'],
     ['🌹','🌹','🌻','🌼','🌷','🌷'],
     ['⛈','🌤','🌥','🌦','🌧','🌨','🌩'],
     ['🍇','🍉','🍊','🍋','🍌','🍐'],
     ['🍍','🥭','🍎','🍑','🍒','🍓'],
-    ['⚽','⚾','🥎','🏀','🏐','🏈','🏉','🎱'],
-    ['💽','💾','💿','📀'],
-    ['📞','📟','📠','🔋','🔌','💻','🧮'],
-    ['🎥','📺','📸','📹','📼'],
-    ['📅','2','12','📅','2','12']
+    ['⚽','⚾','🥎','🏀','🏐','🎱'],
+    ['💻','📸','💽','💾','💿','📀'],
+    // ['📞','📟','📠','🔋'],
+    // ['🔌','🧮'],
+    // ['🎥','📺','📹','📼'],
+    // ['📅','2','12','📅','2','12']
   ],
   modo: 0,
-  grid_size_ref: 18, //16,
-  frames: 450,
+  grid_size_ref: 14,//10, //16,
+  frames: 900,
   formato: {
-    width: 1080,
-    height: 1920,
-  }
+    width: 1280,
+    height: 720,
+  },
+  overlay: 'overlay-streamyard-vinheta-aguardando.png'
 }
 
 /* SETUP */
@@ -71,7 +73,7 @@ let formato = {
 }
 let t;
 let contador = 0;
-let playing = false;
+let playing = true;
 let semente = 0;
 
 /* PARAMETROS ASCII */
@@ -88,20 +90,28 @@ const maxColor = 765;// 255*3
 let camera;
 const camWidth = 320;
 const camHeight = 240;
+let overlay;
+let overlaying = true;
 
 /* INTERFACE */
 
 let radio_symbols;
 let btn_camera;
 let btn_save;
+let btn_save_video;
 let btn_play_pause;
+let btn_overlay;
 
 P5Capture.setDefaultOptions({
   format: "jpg",
   framerate: 30,
   duration: frames,
-  disableUi: true,
+  // disableUi: true,
 });
+
+function preload() {
+  overlay = loadImage('../images/' + opcoes.overlay);
+}
 
 function setup() {
   // canvas = createCanvas(windowWidth, windowHeight);
@@ -112,7 +122,7 @@ function setup() {
   init();
 
 	textAlign(CENTER, CENTER);
-  textSize(cell_size * 0.8);
+  textSize(cell_size * 0.65);
 
 	// camera = createCapture(VIDEO);
 	// camera.size(camWidth, camHeight);
@@ -143,9 +153,20 @@ function setup() {
   btn_save.parent("interface");
   btn_save.mousePressed(save_image);
 
+  btn_save_video = createButton('Salvar vídeo');
+  btn_save_video.parent("interface");
+  btn_save_video.mousePressed(save_video);
+
   btn_play_pause = createButton('Play & Pause');
   btn_play_pause.parent("interface");
-  btn_play_pause.mousePressed(play_pause);
+  btn_play_pause.mousePressed(function(){ playing =! playing;});
+
+  btn_overlay = createButton('Overlay');
+  btn_overlay.parent("interface");
+  btn_overlay.mousePressed(function(){ overlaying =! overlaying;});
+  
+
+  capture = P5Capture.getInstance();
 
 }
 
@@ -167,7 +188,7 @@ function draw() {
         let xoff = cos(TWO_PI * t);
         let yoff = cos(TWO_PI * t);
 
-        let n = noise(x*0.07 + xoff ,y*0.07 + yoff);
+        let n = noise(x*0.07 + xoff , y*0.07 + yoff);
         let c = map(n, 0, 0.7, 0, 255);
         buffer.stroke(c);
         buffer.point(x,y);
@@ -181,6 +202,11 @@ function draw() {
 
  	imageToAscii(buffer);
   // image(buffer, width/2, height/2, buffer.width * 10, buffer.height * 10)
+  
+  if (overlaying) {
+    image(overlay, 0, 0, width, height);
+  }
+  
   if( playing ) {
     contador++;
   } 
@@ -229,6 +255,16 @@ function save_image() {
   save(canvas, timestamp + 'png');
 }
 
-function play_pause() {
-  playing =! playing;
+function save_video() {
+  if (capture.state === "idle") {
+    contador = 0;
+    capture.start({
+      // format: selectFormato.value,
+      framerate: 30,
+      duration: frames,
+      verbose: true
+    });
+  } else {
+    capture.stop();
+  }
 }
