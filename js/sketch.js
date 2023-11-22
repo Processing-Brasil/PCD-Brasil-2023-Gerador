@@ -43,14 +43,15 @@ let opcoes = {
     // ['🎥','📺','📹','📼'],
     // ['📅','2','12','📅','2','12']
   ],
-  modo: 0,
-  grid_size_ref: 14,//10, //16,
+  modo: 3,
+  grid_size_ref: 10,//14,//10, //16,
   frames: 900,
   formato: {
-    width: 1280,
-    height: 720,
+    width: 1080,
+    height: 1080,
   },
-  overlay: 'overlay-streamyard-vinheta-aguardando.png'
+  overlay: 'overlay-streamyard-vinheta-aguardando.png',
+  imagem: 'BarbaraDanielaJésusRenato.jpg',
 }
 
 /* SETUP */
@@ -63,6 +64,7 @@ const modes = [
   'noise',
   'camera',
   'draw',
+  'imagem'
 ]
 let mode = modes[opcoes.modo];
 let grid_size_ref = opcoes.grid_size_ref;
@@ -91,7 +93,7 @@ let camera;
 const camWidth = 320;
 const camHeight = 240;
 let overlay;
-let overlaying = true;
+let overlaying = false;
 
 /* INTERFACE */
 
@@ -111,6 +113,7 @@ P5Capture.setDefaultOptions({
 
 function preload() {
   overlay = loadImage('../images/' + opcoes.overlay);
+  imagem = loadImage('../images/' + opcoes.imagem)
 }
 
 function setup() {
@@ -198,6 +201,10 @@ function draw() {
 
   if( mode == 'camera') {
     buffer.image(camera, 0, 0, grid_columns, grid_rows);
+  }
+
+  if( mode == 'imagem') {
+    buffer.image(imagem, 0, 0, grid_columns, grid_rows);
   }
 
  	imageToAscii(buffer);
