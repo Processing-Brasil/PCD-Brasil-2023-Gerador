@@ -1,0 +1,65 @@
+[
+  {
+    "horario": "10h",
+    "proponente": "Alexandre B A Villares",
+    "titulo": "Python científico na programação criativa: o que eu aprendi até agora de numpy para usar nos meus desenho",
+    "tipo": "Palestra",
+    "descricao": "Alexandre Villares usa Python para fazer seus desenhos, uma linguagem interpretada que tem a fama de ser lenta. No ecossistema do Python, a biblioteca numpy se destaca como pilar da computação científica, fazendo operações com matrizes de maneira muito eficiente. Nessa palestra Alexandre irá mostrar como usa numpy em seus sketches e como está aprendendo aos poucos a pensar de maneira \"vetorizada\" evitando os lentos laços de repetição do arroz com feijão no Python.",
+    "minibio": "**Alexandre B A Villarees** é professor em vários lugares e artista visual, trabalha também com projetos de design e novas mídias. Pesquisa ensino de programação em contextos visuais. Graduado em arquitetura e urbanismo pela FAU-USP (2000) e mestre pela FECFAU-Unicamp (2019). Co-organizador da Noite de Processing, desenvolve material didático aberto, colabora com projetos de software livre e atua como educador de tecnologias e artes no Sesc-SP.",
+    "imagem": "AlexandreVillares.jpg"
+  },
+  {
+    "horario": "11h",
+    "proponente": "João Generoso",
+    "titulo": "Criando Sistemas de Design com p5.js",
+    "tipo": "Palestra",
+    "descricao": "Palestra sobre o uso do p5.js no design gráfico, mais especificamente da criação de ferramentas que produzam peças gráficas, como geradores de logos e templates para redes sociais.",
+    "minibio": "**João Generoso** é designer gráfico e explora novas relações entre sistemas visuais, programação criativa e espaço construído. Hoje, ele continua a investigar novas mídias que permitam não apenas a criação e publicação de projetos, mas que esse processo seja construído coletivamente.",
+    "imagem": "JoaoGeneroso.jpg"
+  },
+  {
+    "horario": "14h",
+    "proponente": "Gustavo Mandolesi",
+    "titulo": "Arte em Alta Velocidade no HTML5 Canvas: Otimizando com WebWorkers e OffscreenCanvas",
+    "tipo": "Palestra",
+    "descricao": "A palestra explora como as tecnologias de HTML5 WebWorkers e OffscreenCanvas podem ser aplicadas para melhorar o desempenho na criação de arte digital. Será apresentada uma técnica que emprega múltiplos OffscreenCanvas processados em paralelo para compor imagens complexas, semelhante ao uso de camadas em um aplicativo de edição gráfica.\n\nAtravés de exemplos visuais e demonstrações em código, os participantes poderão ver esses conceitos em prática. O objetivo é oferecer aos programadores e designers novas perspectivas sobre a arte gerativa na Web e como essas tecnologias podem otimizar seus processos criativos.",
+    "minibio": "?",
+    "imagem": "GustavoMandolesi.jpg"
+  },
+  {
+    "horario": "15h",
+    "proponente": "Barbara Castro, Daniela Tinocco, Jésus Baro e Renato Gaudioso",
+    "titulo": "Programação criativia no ensino de design",
+    "tipo": "Mesa de Conversa",
+    "descricao": "Barbara Castro convida Jésus Baro, Renato Gaudioso e Daniela Tinocco para discutirem como o acesso a disciplinas de programação criativa durante a graduação impactam na aprendizagem, ensino e atuação profissional no campo do design.",
+    "minibio": "**Barbara Castro**, professora adjunta da Escola Superior de Desenho Industrial e diretora de criação da Ambos&&.\n\n**Daniela Tinocco**, designer formada pela ESDI com passagem pela Super Uber e atual designer do Hospital Sírio-Libanês.\n\n**Jésus Baro**, estudante de design na ESDI/UERJ.\n\n**Renato Gaudioso**, formado em design pela PUC-Rio e atual mestrando na ESDI.",
+    "imagem": "BarbaraDanielaJésusRenato.jpg"
+  },
+  {
+    "horario": "16h",
+    "proponente": "João Antonio (John)",
+    "titulo": "Game Jam IV! -Jogos feitos do zero ao vivo!",
+    "tipo": "Oficina",
+    "descricao": "Nada melhor pra mostrar o poder das nossas ferramentas de programação criativa como criar um jogo do zero em menos de uma hora! Todos os níveis de experiência são bem vindos, o único requisito é o entusiasmo por criar!",
+    "minibio": "?",
+    "imagem": "JoaoAntonio.jpg"
+  },
+  {
+    "horario": "17h",
+    "proponente": "André Burnier",
+    "titulo": "Design Programado",
+    "tipo": "Palestra",
+    "descricao": "Nessa fala André vai compartilhar seu processo de desenvolvimento de ferramentas customizadas para o projetos de design gráfico. Essas ferramentas, desenvolvidas em p5js e JavaScript, geram marcas que reagem ao som, patterns animados e letterings personalizados para identidades visuais contemporâneas.",
+    "minibio": "**André Burnier** atua como designer gráfico e programador criativo. Em 2016 se formou Mestre em Design Gráfico pela AKV | St. Joost, na Holanda, e dês de então desenvolve uma pesquisa sobre a intersecção entre design e programação. Durante essa pesquisa prática, Burnier explora o design generativo com desenvolvimento de ferramentas para fazer design.",
+    "imagem": "AndreBurnier.jpg"
+  },
+  {
+    "horario": "18h",
+    "proponente": "Marcelo de Oliveira Rosa Prates",
+    "titulo": "AI Art e Direitos Autorais: Debates Críticos e um Chamado à Ação da Comunidade de Arte Generativa",
+    "tipo": "Palestra",
+    "descricao": "A palestra irá abordar sobre: geradores de imagem (Stable Diffusion, DALL-E, Midjourney, entre outros); debates envolvendo direitos autorais; aspectos de divulgação científica sobre os datasets utilizados no treinamento desses modelos; ferramentas à disposição de artistas para auditoria de modelos de geração de imagem; e proteção contra a raspagem dos seus dados para o treinamento dessas ferramentas. Também será trazida perspectivas para experimentações com AI Art conduzidas de maneira ética, com exemplos de trabalhos próprios e de outros artistas que fogem à regra dos modelos e serviços estabelecidos.",
+    "minibio": "**Marcelo Prates** é Doutor em Computação (Inteligência Artificial) pela UFRGS, com publicações científicas nas áreas de ética da inteligência artificial e deep learning geométrico (graph neural networks). Atualmente atua como cientista de dados e engenheiro de machine learning  no setor privado, com passagem pela divisão de machine learning da Samsung Research Brazil.\n\nMarcelo experimenta com arte generativa (arte produzida por meio de programação) como hobby desde 2015, majoritariamente nas linguagens Python e Processing. Seus principais interesses de pesquisa incluem a intersecção da arte com as ciências exatas, a natureza do processo artístico no contexto da arte generativa e a relação da arte generativa com diferentes tipos de mídia (impressão 2D, 3D e pen plotting; projeções, sketches interativos, etc.) Alguns tópicos de interesse são: simulações físicas e biológicas, \"math art\", sistemas complexos, signed distance functions, cartografia, pen-plotters, fractais e arte (procedural) abstrata. É o criador da ferramenta open-source \"prettymaps\" (>10k stars no GitHub), voltada para a criação de mapas estilizados a partir de dados públicos do OpenStreetMap.",
+    "imagem": "MarceloPrates.jpg"
+  }
+]

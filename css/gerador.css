@@ -1,4 +1,9 @@
-main {
+main.gerador {
+  
+}
+
+main  {
+  background-color: grey;
 }
 
 #interface {
@@ -32,9 +37,4 @@ main {
 
 #p5js-container {
   position: relative;
-  /* width: 1080px;
-  height: 1920px; */
-
-  width: 1280px;
-  height: 720px;
 }

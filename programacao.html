@@ -6,52 +6,164 @@
   <title>Document</title>
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/gerador.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js" integrity="sha512-pgK6Wo8doipc/IPQ0ilH3b47ww01345nR9ud1/6Qp0n+lQlEW9zuw6JhysRcUpBY4yKuVZjn1MAkDxbnncuGsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/p5.capture@1.4.1/dist/p5.capture.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/diagramador.css">
 
-  <script defer src="../js/sketch.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.js" integrity="sha512-zPMZ/3MBK+R1rv6KcBFcf7rGwLnKS+xtB2OnWkAxgC6anqxlDhl/wMWtDbiYI4rgi/NrCJdXrmNGB8pIq+slJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image-more/3.2.0/dom-to-image-more.min.js" integrity="sha512-uNCEHnjiVRcBeUW48zdeZ/niEz/rVu331t9Ho1vC4ho/s0mVqy447Z8Lvwoeq8hWGclUupV95CM1i8MODs0AUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js" integrity="sha512-pgK6Wo8doipc/IPQ0ilH3b47ww01345nR9ud1/6Qp0n+lQlEW9zuw6JhysRcUpBY4yKuVZjn1MAkDxbnncuGsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="../js/main.js"></script>
   <script src="../js/dom-to-image.js"></script>
+
+
 
 </head>
 <body>
   <main>
-    <div id="interface"></div>
-    <div id="p5js-container">
-      <div id="infos">
-        <div class="texto superior">
-          <h4 class="programacao-item-titulo colorido"><span class="programacao-item-tipo" style="background-color: rgb(82, 254, 84);">Palestra</span><span style="background-color: rgb(78, 87, 250);">AI Art e Direitos Autorais: Debates Críticos e um Chamado à Ação da Comunidade de Arte Generativa </span><span class="programacao-item-pessoa" style="background-color: rgb(87, 253, 253);">Marcelo de Oliveira Rosa Prates</span></h4>
-        </div>
-        <div class="imagem">
-          <img src="images/AlexandreVillares.jpg" alt="">
-        </div>
-        <div class="texto inferior">
-          <div class="colorido">
-           <span>Processing Community Day</span><br><!--
-            --><span class="separador">*</span><!--
-            --><span>Brasil</span><!--
-            --><span class="separador">*</span><!--
-            --><span>2023</span><!--
-            --><span class="separador">*</span>
-          </div>
-          <div class="colorido">
-            <span class="separador">*</span><!--
-            --><span>2 de Dezembro</span><!--
-            --><span class="separador">*</span>
-          </div>
-          <div class="colorido">
-            <span>Mais informações:</span>
-          </div>
-          <div class="colorido">
-            <span>pcd2023.encontrosgitais.com.br</span>
-          </div>
-        </div>
-      </div>
+    <div id="merge">
+
     </div>
-    <button id="btn">oi</button>
-    <div id="captura"></div> 
+
+    <style>
+
+      h4 {
+        margin: 0;
+      }
+
+      .programacao {
+        /* display: none; */
+        width: 1080px;
+        height: 1350px;
+        margin: 4rem 2rem;
+        background-color: #f0f;
+        position: relative;
+        overflow: hidden;
+        background-size: cover;
+        background-image: url('./images/fundo-programação-01.png');
+      }
+
+      .programacao .imagem {
+        width: 1080px;
+        height: 1080px;
+      }
+
+      .programacao .texto {
+        height: 135px;
+        display: block;
+        z-index: 1;
+        --base-font-size: 3.34rem;
+        --base-color-lineheight: calc(var(--base-font-size) * 1.27);
+        width: 100%;
+      }
+
+      .programacao .texto.superior {
+        /* display: flex;
+        flex-direction: column;
+        justify-content: end; */
+        position: relative;
+        left: 0;
+        top: 0;
+      }
+
+      .programacao .texto.inferior {
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+      }
+
+      .programacao i {
+        width: 0;
+        display: inline-block;
+      }
+
+    </style>
+
   </main>
+
+  <script type="text/javascript">
+    
+    let merge = document.getElementById("merge");
+
+    fetch("../data/programacao_completa.json")
+                    .then(res => res.json())
+                    .then(data => gerar_posts(data));
+    
+    function gerar_posts(data) {
+      data.forEach(d => {
+        let html = `
+          <section class="artboard programacao">
+              <div class="texto superior">
+                <h4 class="titulo colorido">
+                  <span class="horario">${d.horario}</span><span class="tipo">${d.tipo}</span><span class="separador">*</span><i> </i><br><!--
+                --><span>${d.titulo}<i> </i><br></span><span class="separador">*</span><!--
+                --><span class="pessoa">${d.proponente}</span><span class="separador">*</span></h4>
+              </div>
+              <div class="imagem" style="background-image: url('images/${d.imagem}')">
+                <img src="images/${d.imagem}" alt="">
+              </div>
+              <div class="texto inferior">
+                <div class="colorido">
+                  <span>Processing Community Day Brasil</span><br>
+                  <span class="separador">*</span><!--
+                  --><span>2 de Dezembro de 2023</span><!--
+                  --><span class="separador">*</span>
+                </div>
+                <div class="colorido" style="text-align: right">
+                  <span>pcd2023.encontrosgitais.com.br</span>
+                </div>
+              </div>
+          </section>
+          `
+          merge.innerHTML += html;
+      });
+
+      colorir();
+      separador();
+
+      // let artboards = document.querySelectorAll('.programacao');
+
+      // for (const artboard of artboards) {
+      //   gerar_imagem(artboard);
+        
+      // }
+    }
+
+
+    function gerar_imagem(node) {
+
+      // Esse foi oq deu mais certo
+      // htmlToImage.toPng(node)
+      // .then(function (dataUrl) {
+      //   var img = new Image();
+      //   img.src = dataUrl;
+      //   document.body.appendChild(img);
+      // })
+      // .catch(function (error) {
+      //   console.error('oops, something went wrong!', error);
+      // });
+
+      // domtoimage
+      // .toPng(node)
+      // .then(function (dataUrl) {
+      //     var img = new Image();
+      //     img.src = dataUrl;
+      //     document.body.appendChild(img);
+      // })
+      // .catch(function (error) {
+      //     console.error('oops, something went wrong!', error);
+      // });
+
+
+    }
+
+
+    
+    
+  </script>
+
 
   <script>
     
