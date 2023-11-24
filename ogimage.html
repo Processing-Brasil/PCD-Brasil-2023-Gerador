@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/diagramador.css">
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.js" integrity="sha512-zPMZ/3MBK+R1rv6KcBFcf7rGwLnKS+xtB2OnWkAxgC6anqxlDhl/wMWtDbiYI4rgi/NrCJdXrmNGB8pIq+slJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image-more/3.2.0/dom-to-image-more.min.js" integrity="sha512-uNCEHnjiVRcBeUW48zdeZ/niEz/rVu331t9Ho1vC4ho/s0mVqy447Z8Lvwoeq8hWGclUupV95CM1i8MODs0AUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js" integrity="sha512-pgK6Wo8doipc/IPQ0ilH3b47ww01345nR9ud1/6Qp0n+lQlEW9zuw6JhysRcUpBY4yKuVZjn1MAkDxbnncuGsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="../js/main.js"></script>
+  <script src="../js/dom-to-image.js"></script>
+
+
+
+</head>
+<body>
+  <main>
+    <div id="merge">
+
+    </div>
+
+    <style>
+
+      h4 {
+        margin: 0;
+      }
+
+      .ogimage {
+        /* display: none; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 1000px;
+        height: 1000px;
+        margin: 5rem;
+        background-color: rgb(53, 0, 138);
+        background-image: url('/images/ogimage.png');
+        position: relative;
+        overflow: hidden;
+        background-size: fill;
+        background-position: center;
+      }
+
+      .ogimage .texto {
+        /* height: 420px; */
+        display: block;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        --base-font-size: 6rem;
+        --base-color-lineheight: calc(var(--base-font-size) * 1.22);
+        margin: 1em 0 ;
+      }
+
+      .ogimage i {
+        width: 0;
+        display: inline-block;
+      }
+
+    </style>
+
+  </main>
+
+  <section class="artboard ogimage" >
+    <div class="colorido texto">
+      <span class="separador">*</span><span style="text-transform: uppercase">Processing Community Day</span><br><!--
+       --><span class="separador">*</span><!--
+       --><span style="text-transform: uppercase">Brasil</span><!--
+       --><span class="separador">*</span><i></i><!--
+       --><span>2023</span><!--
+       --><span class="separador">*</span>
+     </div>
+    
+
+  </section>
+  
+</body>
+</html>

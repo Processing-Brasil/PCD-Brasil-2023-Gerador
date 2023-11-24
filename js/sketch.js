@@ -8,17 +8,17 @@ https://www.openprocessing.org/sketch/818943
 
 let opcoes = {
   paleta: [
-    // '#000000',
+    '#000000',
     '#4e57fa',
     '#fd5554',
     '#52fe54',
-    // '#fbfc01',
-    // '#57fdfd',
+    '#fbfc01',
+    '#57fdfd',
   ],
   chars: [  
     '●●●●●○○○○○',
-    // '#%$^&*()_+!',
-    // '↑↗→↘↓↙←↖',
+    '#%$^&*()_+!',
+    '↑↗→↘↓↙←↖',
     '█▓▒░ ',
     '█▊▋▌▍▎▏ ',
     '▖▗▘▙▚▛▜▝▞▟',
@@ -47,8 +47,8 @@ let opcoes = {
   grid_size_ref: 10,//10, //16,
   frames: 450,
   formato: {
-    width: 1080,
-    height: 1920,
+    width: 1000,
+    height: 1000,
   },
   overlay: 'AlexandreVillares-Overlay.png',
   imagem: 'BarbaraDanielaJésusRenato.jpg',

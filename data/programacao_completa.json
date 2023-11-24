@@ -2,7 +2,7 @@
   {
     "horario": "10h",
     "proponente": "Alexandre B A Villares",
-    "titulo": "Python científico na programação criativa: o que eu aprendi até agora de numpy para usar nos meus desenho",
+    "titulo": "Python científico na programação criativa: o que eu aprendi até agora de numpy para usar nos meus desenhos",
     "tipo": "Palestra",
     "descricao": "Alexandre Villares usa Python para fazer seus desenhos, uma linguagem interpretada que tem a fama de ser lenta. No ecossistema do Python, a biblioteca numpy se destaca como pilar da computação científica, fazendo operações com matrizes de maneira muito eficiente. Nessa palestra Alexandre irá mostrar como usa numpy em seus sketches e como está aprendendo aos poucos a pensar de maneira \"vetorizada\" evitando os lentos laços de repetição do arroz com feijão no Python.",
     "minibio": "**Alexandre B A Villarees** é professor em vários lugares e artista visual, trabalha também com projetos de design e novas mídias. Pesquisa ensino de programação em contextos visuais. Graduado em arquitetura e urbanismo pela FAU-USP (2000) e mestre pela FECFAU-Unicamp (2019). Co-organizador da Noite de Processing, desenvolve material didático aberto, colabora com projetos de software livre e atua como educador de tecnologias e artes no Sesc-SP.",
@@ -29,7 +29,7 @@
   {
     "horario": "15h",
     "proponente": "Barbara Castro, Daniela Tinocco, Jésus Baro e Renato Gaudioso",
-    "titulo": "Programação criativia no ensino de design",
+    "titulo": "Programação criativa no ensino de design",
     "tipo": "Mesa de Conversa",
     "descricao": "Barbara Castro convida Jésus Baro, Renato Gaudioso e Daniela Tinocco para discutirem como o acesso a disciplinas de programação criativa durante a graduação impactam na aprendizagem, ensino e atuação profissional no campo do design.",
     "minibio": "**Barbara Castro**, professora adjunta da Escola Superior de Desenho Industrial e diretora de criação da Ambos&&.\n\n**Daniela Tinocco**, designer formada pela ESDI com passagem pela Super Uber e atual designer do Hospital Sírio-Libanês.\n\n**Jésus Baro**, estudante de design na ESDI/UERJ.\n\n**Renato Gaudioso**, formado em design pela PUC-Rio e atual mestrando na ESDI.",
