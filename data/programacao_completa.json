@@ -5,7 +5,7 @@
     "titulo": "Python científico na programação criativa: o que eu aprendi até agora de numpy para usar nos meus desenhos",
     "tipo": "Palestra",
     "descricao": "Alexandre Villares usa Python para fazer seus desenhos, uma linguagem interpretada que tem a fama de ser lenta. No ecossistema do Python, a biblioteca numpy se destaca como pilar da computação científica, fazendo operações com matrizes de maneira muito eficiente. Nessa palestra Alexandre irá mostrar como usa numpy em seus sketches e como está aprendendo aos poucos a pensar de maneira \"vetorizada\" evitando os lentos laços de repetição do arroz com feijão no Python.",
-    "minibio": "**Alexandre B A Villarees** é professor em vários lugares e artista visual, trabalha também com projetos de design e novas mídias. Pesquisa ensino de programação em contextos visuais. Graduado em arquitetura e urbanismo pela FAU-USP (2000) e mestre pela FECFAU-Unicamp (2019). Co-organizador da Noite de Processing, desenvolve material didático aberto, colabora com projetos de software livre e atua como educador de tecnologias e artes no Sesc-SP.",
+    "minibio": "**Alexandre B A Villares** é professor em vários lugares e artista visual, trabalha também com projetos de design e novas mídias. Pesquisa ensino de programação em contextos visuais. Graduado em arquitetura e urbanismo pela FAU-USP (2000) e mestre pela FECFAU-Unicamp (2019). Co-organizador da Noite de Processing, desenvolve material didático aberto, colabora com projetos de software livre e atua como educador de tecnologias e artes no Sesc-SP.",
     "imagem": "AlexandreVillares.jpg"
   },
   {
@@ -23,17 +23,17 @@
     "titulo": "Arte em Alta Velocidade no HTML5 Canvas: Otimizando com WebWorkers e OffscreenCanvas",
     "tipo": "Palestra",
     "descricao": "A palestra explora como as tecnologias de HTML5 WebWorkers e OffscreenCanvas podem ser aplicadas para melhorar o desempenho na criação de arte digital. Será apresentada uma técnica que emprega múltiplos OffscreenCanvas processados em paralelo para compor imagens complexas, semelhante ao uso de camadas em um aplicativo de edição gráfica.\n\nAtravés de exemplos visuais e demonstrações em código, os participantes poderão ver esses conceitos em prática. O objetivo é oferecer aos programadores e designers novas perspectivas sobre a arte gerativa na Web e como essas tecnologias podem otimizar seus processos criativos.",
-    "minibio": "?",
+    "minibio": "**Gustavo Mandolesi** com uma carreira de mais de 2 décadas como engenheiro de software combina sua paixão pela tecnologia com as artes visuais. Nas horas vagas ele se dedica a explorar o campo do código criativo, desenvolvendo trabalhos que envolvem programação, matemática, impressão 3D e pintura. Seu processo artístico encapsula a ideia de misturar e remisturar elementos dos mundos físico e digital, em uma interação entre homem e máquina onde a criação de um se torna o insumo para a criação do outro.",
     "imagem": "GustavoMandolesi.jpg"
   },
   {
     "horario": "15h",
-    "proponente": "Barbara Castro, Daniela Tinocco, Jésus Baro e Renato Gaudioso",
+    "proponente": "Alex Flower, Barbara Castro, Daniela Tinocco, Jésus Baro e Renato Gaudioso",
     "titulo": "Programação criativa no ensino de design",
     "tipo": "Mesa de Conversa",
-    "descricao": "Barbara Castro convida Jésus Baro, Renato Gaudioso e Daniela Tinocco para discutirem como o acesso a disciplinas de programação criativa durante a graduação impactam na aprendizagem, ensino e atuação profissional no campo do design.",
-    "minibio": "**Barbara Castro**, professora adjunta da Escola Superior de Desenho Industrial e diretora de criação da Ambos&&.\n\n**Daniela Tinocco**, designer formada pela ESDI com passagem pela Super Uber e atual designer do Hospital Sírio-Libanês.\n\n**Jésus Baro**, estudante de design na ESDI/UERJ.\n\n**Renato Gaudioso**, formado em design pela PUC-Rio e atual mestrando na ESDI.",
-    "imagem": "BarbaraDanielaJésusRenato.jpg"
+    "descricao": "Barbara Castro convida Alex Flower, Daniela Tinocco, Jésus Baro, Renato Gaudioso e para discutirem como o acesso a disciplinas de programação criativa durante a graduação impactam na aprendizagem, ensino e atuação profissional no campo do design.",
+    "minibio": "**Mediação:**\n\n**Barbara Castro**, professora adjunta da Escola Superior de Desenho Industrial e diretora de criação da Ambos&&.\n\n**Participantes:**\n\n**Alex Flower**, designer recém formado pela PUC-Rio.\n\n**Daniela Tinocco**, designer formada pela ESDI com passagem pela Super Uber e atual designer do Hospital Sírio-Libanês.\n\n**Jésus Baro**, estudante de design na ESDI/UERJ.\n\n**Renato Gaudioso**, formado em design pela PUC-Rio e atual mestrando na ESDI.",
+    "imagem": "AlexBarbaraJesusDanielaRenato.jpg"
   },
   {
     "horario": "16h",
@@ -41,7 +41,7 @@
     "titulo": "Game Jam IV! -Jogos feitos do zero ao vivo!",
     "tipo": "Oficina",
     "descricao": "Nada melhor pra mostrar o poder das nossas ferramentas de programação criativa como criar um jogo do zero em menos de uma hora! Todos os níveis de experiência são bem vindos, o único requisito é o entusiasmo por criar!",
-    "minibio": "?",
+    "minibio": "**João Antonio** programa há 10 anos, dentro do desenvolvimento de games, da software-arte, hardware, ferramentas para desktop entre outras. O gosto por criar com código só é igualado pelo prazer de compartilhar conhecimento com outros! Confira alguns de seus trabalhos aqui: [https://introscopia.github.io/](https://introscopia.github.io/)",
     "imagem": "JoaoAntonio.jpg"
   },
   {
