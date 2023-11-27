@@ -1,48 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/gerador.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js" integrity="sha512-pgK6Wo8doipc/IPQ0ilH3b47ww01345nR9ud1/6Qp0n+lQlEW9zuw6JhysRcUpBY4yKuVZjn1MAkDxbnncuGsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/p5.capture@1.4.1/dist/p5.capture.umd.min.js"></script>
-
-  <!-- <script defer src="../js/sketch.js"></script> -->
-  <script defer src="../js/main.js"></script>
-  <script src="../js/dom-to-image.js"></script>
-
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/diagramador.css">
+  
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.js" integrity="sha512-zPMZ/3MBK+R1rv6KcBFcf7rGwLnKS+xtB2OnWkAxgC6anqxlDhl/wMWtDbiYI4rgi/NrCJdXrmNGB8pIq+slJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image-more/3.2.0/dom-to-image-more.min.js" integrity="sha512-uNCEHnjiVRcBeUW48zdeZ/niEz/rVu331t9Ho1vC4ho/s0mVqy447Z8Lvwoeq8hWGclUupV95CM1i8MODs0AUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js" integrity="sha512-pgK6Wo8doipc/IPQ0ilH3b47ww01345nR9ud1/6Qp0n+lQlEW9zuw6JhysRcUpBY4yKuVZjn1MAkDxbnncuGsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="../js/main.js"></script>
+    <script src="../js/dom-to-image.js"></script>
+  
+  
+  
+  </head>
 <body>
   <main>
-    <div id="interface"></div>
-    <div id="p5js-container">
-      <div id="infos" class="streamyard">
-        <div class="texto inferior" style="width: 100%;">
-          <div class="colorido" style='text-align: left;'>
-           <span style="text-transform: uppercase">Processing Community Day</span><br><!--
-            --><span class="separador">*</span><!--
-            --><span style="text-transform: uppercase">Brasil</span><!--
-            --><span class="separador">*</span><!--
-            --><span>2023</span><!--
-            --><span class="separador">*</span>
-          </div>
-          <div class="colorido">
-            <span class="separador">*</span><!--
-            --><span>2 de Dezembro</span><!--
-            --><span class="separador">*</span>
-          </div>
-          <div class="colorido">
-            <span>mais informações:</span>
-          </div>
-          <div class="colorido">
-            <span>pcd2023.encontrosgitais.com.br</span>
-          </div>
+    
+    <style>
+
+      h4 {
+        margin: 0;
+      }
+
+      .streamyard {
+        /* display: none; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 1280px;
+        height: 720px;
+        margin: 5rem;
+        background-color: rgb(53, 0, 138);
+        position: relative;
+        overflow: hidden;
+        background-image: url('./images/StreamYard-Fundo.png');
+        background-size: fill;
+        background-position: center;
+      }
+
+      .streamyard .texto {
+        width: 80%;
+        display: block;
+        position: relative;
+        z-index: 1;
+        --base-font-size: 4rem;
+        --base-color-lineheight: calc(var(--base-font-size) * 1.25);
+        margin: 1em 0 ;
+      }
+
+      .streamyard i {
+        width: 0;
+        display: inline-block;
+      }
+
+    </style>
+
+
+    
+    <section id="infos" class="artboard streamyard">
+      <div class="texto">
+        <div class="colorido" style='text-align: left;'>
+          <span style="text-transform: uppercase">Processing Community Day</span><br><!--
+          --><span class="separador">*</span><!--
+          --><span style="text-transform: uppercase">Brasil</span><!--
+          --><span class="separador">*</span><!--
+          --><span>2023</span><!--
+          --><span class="separador">*</span>
+        </div>
+        <div class="colorido">
+          <span class="separador">*</span><!--
+          --><span>2 de Dezembro</span><!--
+          --><span class="separador">*</span>
+        </div>
+        <div class="colorido" style="text-align: right;">
+          <span>mais informações:</span>
+        </div>
+        <div class="colorido" style="text-align: right;">
+          <span>pcd2023.encontrosgitais.com.br</span>
         </div>
       </div>
-    </div>
+    </section>
+    
   </main>
 
   

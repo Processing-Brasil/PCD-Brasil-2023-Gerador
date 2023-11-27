@@ -47,8 +47,8 @@ let opcoes = {
   grid_size_ref: 10,//10, //16,
   frames: 450,
   formato: {
-    width: 1000,
-    height: 1000,
+    width: 1280,
+    height: 720,
   },
   overlay: 'AlexandreVillares-Overlay.png',
   imagem: 'BarbaraDanielaJésusRenato.jpg',
