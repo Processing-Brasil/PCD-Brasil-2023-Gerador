@@ -11,7 +11,7 @@
   {
     "horario": "11h",
     "proponente": "João Generoso",
-    "titulo": "Criando Sistemas de Design com p5.js",
+    "titulo": "Criando Sistemas\n de Design com p5.js",
     "tipo": "Palestra",
     "descricao": "Palestra sobre o uso do p5.js no design gráfico, mais especificamente da criação de ferramentas que produzam peças gráficas, como geradores de logos e templates para redes sociais.",
     "minibio": "**João Generoso** é designer gráfico e explora novas relações entre sistemas visuais, programação criativa e espaço construído. Hoje, ele continua a investigar novas mídias que permitam não apenas a criação e publicação de projetos, mas que esse processo seja construído coletivamente.",
@@ -29,7 +29,7 @@
   {
     "horario": "15h",
     "proponente": "Alex Flower, Barbara Castro, Daniela Tinocco, Jésus Baro e Renato Gaudioso",
-    "titulo": "Programação criativa no ensino de design",
+    "titulo": "Programação criativa \nno ensino de design",
     "tipo": "Mesa de Conversa",
     "descricao": "Barbara Castro convida Alex Flower, Daniela Tinocco, Jésus Baro, Renato Gaudioso e para discutirem como o acesso a disciplinas de programação criativa durante a graduação impactam na aprendizagem, ensino e atuação profissional no campo do design.",
     "minibio": "**Mediação:**\n\n**Barbara Castro**, professora adjunta da Escola Superior de Desenho Industrial e diretora de criação da Ambos&&.\n\n**Participantes:**\n\n**Alex Flower**, designer recém formado pela PUC-Rio.\n\n**Daniela Tinocco**, designer formada pela ESDI com passagem pela Super Uber e atual designer do Hospital Sírio-Libanês.\n\n**Jésus Baro**, estudante de design na ESDI/UERJ.\n\n**Renato Gaudioso**, formado em design pela PUC-Rio e atual mestrando na ESDI.",
@@ -38,7 +38,7 @@
   {
     "horario": "16h",
     "proponente": "João Antonio (John)",
-    "titulo": "Game Jam IV! -Jogos feitos do zero ao vivo!",
+    "titulo": "Game Jam IV!\nJogos feitos do zero ao vivo!",
     "tipo": "Oficina",
     "descricao": "Nada melhor pra mostrar o poder das nossas ferramentas de programação criativa como criar um jogo do zero em menos de uma hora! Todos os níveis de experiência são bem vindos, o único requisito é o entusiasmo por criar!",
     "minibio": "**João Antonio** programa há 10 anos, dentro do desenvolvimento de games, da software-arte, hardware, ferramentas para desktop entre outras. O gosto por criar com código só é igualado pelo prazer de compartilhar conhecimento com outros! Confira alguns de seus trabalhos aqui: [https://introscopia.github.io/](https://introscopia.github.io/)",

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/diagramador.css">
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.js" integrity="sha512-zPMZ/3MBK+R1rv6KcBFcf7rGwLnKS+xtB2OnWkAxgC6anqxlDhl/wMWtDbiYI4rgi/NrCJdXrmNGB8pIq+slJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image-more/3.2.0/dom-to-image-more.min.js" integrity="sha512-uNCEHnjiVRcBeUW48zdeZ/niEz/rVu331t9Ho1vC4ho/s0mVqy447Z8Lvwoeq8hWGclUupV95CM1i8MODs0AUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js" integrity="sha512-pgK6Wo8doipc/IPQ0ilH3b47ww01345nR9ud1/6Qp0n+lQlEW9zuw6JhysRcUpBY4yKuVZjn1MAkDxbnncuGsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="../js/main.js"></script>
+  <script src="../js/dom-to-image.js"></script>
+
+
+
+</head>
+<body>
+  <main>
+
+    <style>
+
+      h4 {
+        margin: 0;
+      }
+
+      .capas {
+        /* display: none; */
+        width: 1280px;
+        height: 720px;
+        margin: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        position: relative;
+        overflow: hidden;
+        background-size: cover;
+        /* background-image: url('./images/StreamYard-Capa-Palestras.png'); */
+      }
+
+      .capas .texto {
+        display: block;
+        --base-font-size: 3rem;
+        --base-color-lineheight: calc(var(--base-font-size) * 1.3);
+        width: 80%;
+      }
+
+      .capas .texto h2 {
+        margin: 0;
+        --base-font-size: 4rem;
+        --base-color-lineheight: calc(var(--base-font-size) * 1.25);
+      }
+
+      .footer {
+        width: 80%;
+        text-align: right;
+        margin-top: 2em;
+        --base-font-size: 2.5rem;
+        --base-color-lineheight: calc(var(--base-font-size) * 1.35);
+      }
+
+      i {
+        display: inline-block;
+        width: 0;
+      }
+
+    </style>
+
+    <div id="merge">
+    </div>
+
+  </main>
+
+  <script type="text/javascript">
+    
+    let merge = document.getElementById("merge");
+
+    fetch("../data/programacao_completa.json")
+                    .then(res => res.json())
+                    .then(data => gerar_posts(data));
+    
+    function gerar_posts(data) {
+      data.forEach(d => {
+        let html = `
+                  <section class="artboard capas">
+                    <div class="texto superior">
+                      <h4 class="titulo colorido">
+                        <span class="separador">*</span><span class="tipo">${d.tipo}</span><span class="separador">*</span>
+                      </h4>
+                      <h2 class="titulo colorido">
+                        <span class="separador">*</span><span>${d.titulo.replace('\n', '<br>')}<i> </i></span><span class="separador">*</span>
+                      </h2>
+                      <h4 class="titulo colorido" style="text-align: right;">
+                        <span class="separador">*</span><span class="pessoa">${d.proponente}</span><span class="separador">*</span>
+                      </h4>
+                    </div>
+                    <div class="footer">
+                      <div class="colorido" style="text-align: left" >
+                        <span class="separador">*</span><span style="text-transform: uppercase">Processing Community Day<i> </i></span><!--
+                        --><span class="separador">*</span>
+                      </div>
+                      <div class="colorido" style="text-align: right" >
+                        <span style="text-transform: uppercase">Brasil</span><!--
+                        --><span class="separador">*</span><!--
+                        --><span>2023</span><!--
+                        --><span class="separador">*</span>
+                      </div>
+                    </div>
+                  </section>
+                  `
+          merge.innerHTML += html;
+      });
+
+      colorir();
+      separador();
+
+      // let artboards = document.querySelectorAll('.programacao');
+
+      // for (const artboard of artboards) {
+      //   gerar_imagem(artboard);
+        
+      // }
+    }
+
+
+    function gerar_imagem(node) {
+
+      // Esse foi oq deu mais certo
+      // htmlToImage.toPng(node)
+      // .then(function (dataUrl) {
+      //   var img = new Image();
+      //   img.src = dataUrl;
+      //   document.body.appendChild(img);
+      // })
+      // .catch(function (error) {
+      //   console.error('oops, something went wrong!', error);
+      // });
+
+      // domtoimage
+      // .toPng(node)
+      // .then(function (dataUrl) {
+      //     var img = new Image();
+      //     img.src = dataUrl;
+      //     document.body.appendChild(img);
+      // })
+      // .catch(function (error) {
+      //     console.error('oops, something went wrong!', error);
+      // });
+
+
+    }
+
+
+    
+    
+  </script>
+
+
+  <script>
+    
+    // document.getElementById('btn').addEventListener('click', function() {
+
+    // //   domtoimage.toBlob(document.getElementById('p5js-container'))
+    // // .then(function (blob) {
+    // //     window.saveAs(blob, 'my-node.png');
+    // // });
+
+    //   var teste = document.getElementById('p5js-container');
+
+    //   domtoimage.toPng(teste)
+    //     .then(function(dataUrl) {
+    //     console.log(dataUrl);
+    //       //window.open(dataUrl);
+    //       var img = new Image();
+    //       img.src = dataUrl;
+    //       document.getElementById("captura").appendChild(img);
+    //     })
+    //     .catch(function(error) {
+    //       console.error('oops, something went wrong!', error);
+    //     });
+
+    // });
+
+  </script>
+  
+</body>
+</html>
